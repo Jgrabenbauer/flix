@@ -1,0 +1,32 @@
+<h2>
+  Reviews for <%= link_to @movie.title, @movie %>
+</h2>
+
+  <% if @movie.reviews.present? %>
+    <ul class="reviews">
+      <% @reviews.each do |review| %>
+        <li>
+          <%= link_to profile_image(review.user, 50), review.user %>
+          <%= render "shared/stars", percent: review.stars_as_percent %>
+          <p>
+            <%= link_to review.user.name, review.user %>
+            <span class="date">
+              <%= time_ago_in_words(review.created_at) %> ago...
+            </span>
+          </p>
+          <p>
+            <%= review.comment %>
+          </p>
+          <% if current_user?(review.user) || current_user_admin? %>
+            <%= link_to "Edit", edit_movie_review_path(@movie, review), class: "button" %>
+            <%= link_to "Delete", movie_review_path(@movie, review), class: "button",
+             method: :delete, data: { confirm: "Are you sure?" } %>
+          <% end %>
+        </li>
+        <hr>
+      <% end %>
+    </ul>
+
+  <% else %>
+    <h5>😞 There are no reviews available for <%= @movie.title %>.</h5>
+  <% end %>

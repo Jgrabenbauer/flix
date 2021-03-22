@@ -1,0 +1,5 @@
+<h2>New Review for <%= link_to @movie.title, @movie %></h2>
+
+<p>📝 Writing review as <strong><%= current_user.name %></strong></p>
+
+<%= render "form", review: @review %>
