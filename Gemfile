@@ -33,7 +33,10 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'email_validator'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
+
+# Use Amazon S3 for image storage
+gem 'aws-sdk-s3', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
