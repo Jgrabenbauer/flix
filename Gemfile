@@ -12,7 +12,7 @@ end
 
 # Use postgrSQL as the production database
 group :production do
-  gem 'pg', '>= 0.18', '< 2.0'
+  gem 'pg'
 end
 
 # Use Puma as the app server
