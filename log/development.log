@@ -22042,3 +22042,554 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 92ms (Views: 84.3ms | ActiveRecord: 6.0ms | Allocations: 59164)
 
 
+Started GET "/" for ::1 at 2021-03-31 15:37:04 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on < '2021-03-31 20:37:04.977586') ORDER BY "movies"."released_on" DESC[0m
+  ↳ app/views/movies/index.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.4ms | Allocations: 131)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 12]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 12]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 6]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 6]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 11]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 11]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 9]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 9]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 10]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 10]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 8]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 8]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendered movies/index.html.erb within layouts/application (Duration: 103.1ms | Allocations: 100408)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 1255)
+  Rendered layouts/_flash.html.erb (Duration: 0.2ms | Allocations: 150)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 181)
+Completed 200 OK in 3648ms (Views: 3631.5ms | ActiveRecord: 4.1ms | Allocations: 255166)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--615372b85de23299abf56f6d428bac35607aa2b9/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f/avengers-end-game.png" for ::1 at 2021-03-31 15:37:08 -0500
+Processing by ActiveStorage::RepresentationsController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--615372b85de23299abf56f6d428bac35607aa2b9", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f", "filename"=>"avengers-end-game"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.0ms) [0m[34mChecked if file exists at key: variants/94ul6z3dgq3t1nwgptwqrn4ne9uy/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (yes)[0m
+[36m  Disk Storage (1.5ms) [0m[34mGenerated URL for file at key: variants/94ul6z3dgq3t1nwgptwqrn4ne9uy/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPVFIxYkRaNk0yUm5jVE4wTVc1M1ozQjBkM0Z5YmpSdVpUbDFlUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKVmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdFpXNWtMV2RoYldVdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoZG1WdVoyVnljeTFsYm1RdFoyRnRaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC42OTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--2f6736cd924a1f65dfdae4fe665f9961e591514c/avengers-end-game.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22avengers-end-game.png%22%3B+filename%2A%3DUTF-8%27%27avengers-end-game.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPVFIxYkRaNk0yUm5jVE4wTVc1M1ozQjBkM0Z5YmpSdVpUbDFlUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKVmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdFpXNWtMV2RoYldVdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoZG1WdVoyVnljeTFsYm1RdFoyRnRaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC42OTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--2f6736cd924a1f65dfdae4fe665f9961e591514c/avengers-end-game.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22avengers-end-game.png%22%3B+filename%2A%3DUTF-8%27%27avengers-end-game.png
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--da9563edf2b04a97215c8a485091a6e5dd855bd8/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f/captain-marvel.png" for ::1 at 2021-03-31 15:37:08 -0500
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms | Allocations: 3147)
+
+
+Processing by ActiveStorage::RepresentationsController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--da9563edf2b04a97215c8a485091a6e5dd855bd8", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f", "filename"=>"captain-marvel"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--15dcefb6a8a8e5fb7ab02498ff43537ff3450d12/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f/fantastic-four.png" for ::1 at 2021-03-31 15:37:08 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[36m  Disk Storage (2.8ms) [0m[34mChecked if file exists at key: variants/kts9wfqnfb7axv4jotq16iyr724d/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (yes)[0m
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: variants/kts9wfqnfb7axv4jotq16iyr724d/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZhM1J6T1hkbWNXNW1ZamRoZUhZMGFtOTBjVEUyYVhseU56STBaQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRndkR0ZwYmkxdFlYSjJaV3d1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGpZWEIwWVdsdUxXMWhjblpsYkM1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzEwWiIsInB1ciI6ImJsb2Jfa2V5In19--89c7b87dd8abb3a090b90fc1e06f0d9fae72acf6/captain-marvel.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22captain-marvel.png%22%3B+filename%2A%3DUTF-8%27%27captain-marvel.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZhM1J6T1hkbWNXNW1ZamRoZUhZMGFtOTBjVEUyYVhseU56STBaQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRndkR0ZwYmkxdFlYSjJaV3d1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGpZWEIwWVdsdUxXMWhjblpsYkM1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzEwWiIsInB1ciI6ImJsb2Jfa2V5In19--89c7b87dd8abb3a090b90fc1e06f0d9fae72acf6/captain-marvel.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22captain-marvel.png%22%3B+filename%2A%3DUTF-8%27%27captain-marvel.png
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--170d4b7910291c7de19144c3e3811294888dc88f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f/black-panther.png" for ::1 at 2021-03-31 15:37:08 -0500
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--de15d9587a5db5dc8783c1b849b2564d3ea9d42a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f/avengers-infinity-war.png" for ::1 at 2021-03-31 15:37:08 -0500
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--42ce6b181ec13c94f508c9ecc19bc56afb24cda8/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f/wonder-woman.png" for ::1 at 2021-03-31 15:37:08 -0500
+Completed 302 Found in 7ms (ActiveRecord: 0.1ms | Allocations: 5409)
+
+
+Processing by ActiveStorage::RepresentationsController#show as PNG
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--15dcefb6a8a8e5fb7ab02498ff43537ff3450d12", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f", "filename"=>"fantastic-four"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/d1nybvne6kk9hlzqh2vysn6i3pgd/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (yes)[0m
+Processing by ActiveStorage::RepresentationsController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--170d4b7910291c7de19144c3e3811294888dc88f", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f", "filename"=>"black-panther"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by ActiveStorage::RepresentationsController#show as PNG
+Processing by ActiveStorage::RepresentationsController#show as PNG
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: variants/d1nybvne6kk9hlzqh2vysn6i3pgd/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaREZ1ZVdKMmJtVTJhMnM1YUd4NmNXZ3lkbmx6YmpacE0zQm5aQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVptRnVkR0Z6ZEdsakxXWnZkWEl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG1ZVzUwWVhOMGFXTXRabTkxY2k1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzQxWiIsInB1ciI6ImJsb2Jfa2V5In19--6badfc5b1c69b23f3d091fb6f5f0343a11a766d2/fantastic-four.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22fantastic-four.png%22%3B+filename%2A%3DUTF-8%27%27fantastic-four.png)[0m
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--42ce6b181ec13c94f508c9ecc19bc56afb24cda8", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f", "filename"=>"wonder-woman"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPVFIxYkRaNk0yUm5jVE4wTVc1M1ozQjBkM0Z5YmpSdVpUbDFlUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKVmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdFpXNWtMV2RoYldVdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoZG1WdVoyVnljeTFsYm1RdFoyRnRaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC42OTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--2f6736cd924a1f65dfdae4fe665f9961e591514c/avengers-end-game.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22avengers-end-game.png%22%3B+filename%2A%3DUTF-8%27%27avengers-end-game.png" for ::1 at 2021-03-31 15:37:08 -0500
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaREZ1ZVdKMmJtVTJhMnM1YUd4NmNXZ3lkbmx6YmpacE0zQm5aQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVptRnVkR0Z6ZEdsakxXWnZkWEl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG1ZVzUwWVhOMGFXTXRabTkxY2k1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzQxWiIsInB1ciI6ImJsb2Jfa2V5In19--6badfc5b1c69b23f3d091fb6f5f0343a11a766d2/fantastic-four.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22fantastic-four.png%22%3B+filename%2A%3DUTF-8%27%27fantastic-four.png
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--de15d9587a5db5dc8783c1b849b2564d3ea9d42a", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f", "filename"=>"avengers-infinity-war"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/0p21pmpti8y0bidre0e583jq9hti/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (yes)[0m
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/esnduyl2jnzg7505bb954wjuqtiv/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (yes)[0m
+Completed 302 Found in 27ms (ActiveRecord: 0.2ms | Allocations: 8589)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[36m  Disk Storage (0.2ms) [0m[34mChecked if file exists at key: variants/9clfch5fl7cybh0q10jjhjk21mhe/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (yes)[0m
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: variants/0p21pmpti8y0bidre0e583jq9hti/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNSEF5TVhCdGNIUnBPSGt3WW1sa2NtVXdaVFU0TTJweE9XaDBhUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWQyOXVaR1Z5TFhkdmJXRnVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmQyOXVaR1Z5TFhkdmJXRnVMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC43NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--116513a47dc3676248270b0ceb482e5a97a727c2/wonder-woman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22wonder-woman.png%22%3B+filename%2A%3DUTF-8%27%27wonder-woman.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNSEF5TVhCdGNIUnBPSGt3WW1sa2NtVXdaVFU0TTJweE9XaDBhUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWQyOXVaR1Z5TFhkdmJXRnVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmQyOXVaR1Z5TFhkdmJXRnVMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC43NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--116513a47dc3676248270b0ceb482e5a97a727c2/wonder-woman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22wonder-woman.png%22%3B+filename%2A%3DUTF-8%27%27wonder-woman.png
+[36m  Disk Storage (0.2ms) [0m[34mGenerated URL for file at key: variants/esnduyl2jnzg7505bb954wjuqtiv/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaWE51WkhWNWJESnFibnBuTnpVd05XSmlPVFUwZDJwMWNYUnBkaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKZGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbllYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC43NjdaIiwicHVyIjoiYmxvYl9rZXkifX0=--137954886659ea3f9e31f71a4af514b065a3e03e/avengers-infinity-war.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22avengers-infinity-war.png%22%3B+filename%2A%3DUTF-8%27%27avengers-infinity-war.png)[0m
+Completed 302 Found in 25ms (ActiveRecord: 0.1ms | Allocations: 7462)
+
+
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaWE51WkhWNWJESnFibnBuTnpVd05XSmlPVFUwZDJwMWNYUnBkaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKZGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbllYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC43NjdaIiwicHVyIjoiYmxvYl9rZXkifX0=--137954886659ea3f9e31f71a4af514b065a3e03e/avengers-infinity-war.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22avengers-infinity-war.png%22%3B+filename%2A%3DUTF-8%27%27avengers-infinity-war.png
+Completed 302 Found in 25ms (ActiveRecord: 0.1ms | Allocations: 6339)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaREZ1ZVdKMmJtVTJhMnM1YUd4NmNXZ3lkbmx6YmpacE0zQm5aQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVptRnVkR0Z6ZEdsakxXWnZkWEl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG1ZVzUwWVhOMGFXTXRabTkxY2k1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzQxWiIsInB1ciI6ImJsb2Jfa2V5In19--6badfc5b1c69b23f3d091fb6f5f0343a11a766d2/fantastic-four.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22fantastic-four.png%22%3B+filename%2A%3DUTF-8%27%27fantastic-four.png" for ::1 at 2021-03-31 15:37:08 -0500
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: variants/9clfch5fl7cybh0q10jjhjk21mhe/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPV05zWm1Ob05XWnNOMk41WW1nd2NURXdhbXBvYW1zeU1XMW9aUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlteGhZMnN0Y0dGdWRHaGxjaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySnNZV05yTFhCaGJuUm9aWEl1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzY5WiIsInB1ciI6ImJsb2Jfa2V5In19--66b5c27e7d824ae7cba005bae269cd58e30ae859/black-panther.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22black-panther.png%22%3B+filename%2A%3DUTF-8%27%27black-panther.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPV05zWm1Ob05XWnNOMk41WW1nd2NURXdhbXBvYW1zeU1XMW9aUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlteGhZMnN0Y0dGdWRHaGxjaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySnNZV05yTFhCaGJuUm9aWEl1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzY5WiIsInB1ciI6ImJsb2Jfa2V5In19--66b5c27e7d824ae7cba005bae269cd58e30ae859/black-panther.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22black-panther.png%22%3B+filename%2A%3DUTF-8%27%27black-panther.png
+Completed 302 Found in 33ms (ActiveRecord: 0.2ms | Allocations: 11519)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNSEF5TVhCdGNIUnBPSGt3WW1sa2NtVXdaVFU0TTJweE9XaDBhUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWQyOXVaR1Z5TFhkdmJXRnVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmQyOXVaR1Z5TFhkdmJXRnVMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC43NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--116513a47dc3676248270b0ceb482e5a97a727c2/wonder-woman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22wonder-woman.png%22%3B+filename%2A%3DUTF-8%27%27wonder-woman.png" for ::1 at 2021-03-31 15:37:08 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaWE51WkhWNWJESnFibnBuTnpVd05XSmlPVFUwZDJwMWNYUnBkaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKZGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbllYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC43NjdaIiwicHVyIjoiYmxvYl9rZXkifX0=--137954886659ea3f9e31f71a4af514b065a3e03e/avengers-infinity-war.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22avengers-infinity-war.png%22%3B+filename%2A%3DUTF-8%27%27avengers-infinity-war.png" for ::1 at 2021-03-31 15:37:08 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"avengers-end-game.png\"; filename*=UTF-8''avengers-end-game.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPVFIxYkRaNk0yUm5jVE4wTVc1M1ozQjBkM0Z5YmpSdVpUbDFlUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKVmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdFpXNWtMV2RoYldVdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoZG1WdVoyVnljeTFsYm1RdFoyRnRaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC42OTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--2f6736cd924a1f65dfdae4fe665f9961e591514c", "filename"=>"avengers-end-game"}
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"wonder-woman.png\"; filename*=UTF-8''wonder-woman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNSEF5TVhCdGNIUnBPSGt3WW1sa2NtVXdaVFU0TTJweE9XaDBhUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWQyOXVaR1Z5TFhkdmJXRnVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmQyOXVaR1Z5TFhkdmJXRnVMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC43NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--116513a47dc3676248270b0ceb482e5a97a727c2", "filename"=>"wonder-woman"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 1580)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"fantastic-four.png\"; filename*=UTF-8''fantastic-four.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaREZ1ZVdKMmJtVTJhMnM1YUd4NmNXZ3lkbmx6YmpacE0zQm5aQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVptRnVkR0Z6ZEdsakxXWnZkWEl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG1ZVzUwWVhOMGFXTXRabTkxY2k1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzQxWiIsInB1ciI6ImJsb2Jfa2V5In19--6badfc5b1c69b23f3d091fb6f5f0343a11a766d2", "filename"=>"fantastic-four"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 425)
+
+
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 1840)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPV05zWm1Ob05XWnNOMk41WW1nd2NURXdhbXBvYW1zeU1XMW9aUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlteGhZMnN0Y0dGdWRHaGxjaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySnNZV05yTFhCaGJuUm9aWEl1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzY5WiIsInB1ciI6ImJsb2Jfa2V5In19--66b5c27e7d824ae7cba005bae269cd58e30ae859/black-panther.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22black-panther.png%22%3B+filename%2A%3DUTF-8%27%27black-panther.png" for ::1 at 2021-03-31 15:37:08 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"avengers-infinity-war.png\"; filename*=UTF-8''avengers-infinity-war.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaWE51WkhWNWJESnFibnBuTnpVd05XSmlPVFUwZDJwMWNYUnBkaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKZGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbllYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC43NjdaIiwicHVyIjoiYmxvYl9rZXkifX0=--137954886659ea3f9e31f71a4af514b065a3e03e", "filename"=>"avengers-infinity-war"}
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"black-panther.png\"; filename*=UTF-8''black-panther.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPV05zWm1Ob05XWnNOMk41WW1nd2NURXdhbXBvYW1zeU1XMW9aUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlteGhZMnN0Y0dGdWRHaGxjaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySnNZV05yTFhCaGJuUm9aWEl1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzY5WiIsInB1ciI6ImJsb2Jfa2V5In19--66b5c27e7d824ae7cba005bae269cd58e30ae859", "filename"=>"black-panther"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 421)
+
+
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 1563)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b312973799362a759d3bbe80edeb0c32568d2b07/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f/green-lantern.png" for ::1 at 2021-03-31 15:37:08 -0500
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--16d5c3f56df375953f9d8d18edb84e28fb7d9a28/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f/ironman.png" for ::1 at 2021-03-31 15:37:08 -0500
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5b260fb8ea9af5b1507f2f43fef212394a2e96e4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f/catwoman.png" for ::1 at 2021-03-31 15:37:08 -0500
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--76af17424cb5b92ed5727fcc0fc7fec030b9d658/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f/spiderman.png" for ::1 at 2021-03-31 15:37:08 -0500
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b8aa20751349a4331cb82fbd358b8be907d3e731/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f/batman.png" for ::1 at 2021-03-31 15:37:08 -0500
+Processing by ActiveStorage::RepresentationsController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--16d5c3f56df375953f9d8d18edb84e28fb7d9a28", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f", "filename"=>"ironman"}
+Processing by ActiveStorage::RepresentationsController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5b260fb8ea9af5b1507f2f43fef212394a2e96e4", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f", "filename"=>"catwoman"}
+Processing by ActiveStorage::RepresentationsController#show as PNG
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[36m  Disk Storage (0.0ms) [0m[34mChecked if file exists at key: variants/01i6uxmx7nzdr6oe8ke3c9tjz43y/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (yes)[0m
+[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: variants/01i6uxmx7nzdr6oe8ke3c9tjz43y/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNREZwTm5WNGJYZzNibnBrY2padlpUaHJaVE5qT1hScWVqUXplUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRjBkMjl0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhSM2IyMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44MDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9b612b30cf15039e4b255be43327a7cf1ecff6d7/catwoman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22catwoman.png%22%3B+filename%2A%3DUTF-8%27%27catwoman.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNREZwTm5WNGJYZzNibnBrY2padlpUaHJaVE5qT1hScWVqUXplUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRjBkMjl0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhSM2IyMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44MDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9b612b30cf15039e4b255be43327a7cf1ecff6d7/catwoman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22catwoman.png%22%3B+filename%2A%3DUTF-8%27%27catwoman.png
+[36m  Disk Storage (0.0ms) [0m[34mChecked if file exists at key: variants/ok4x4cpi8fcnwaes4y7h5nwi33yy/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (yes)[0m
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: variants/ok4x4cpi8fcnwaes4y7h5nwi33yy/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZiMnMwZURSamNHazRabU51ZDJGbGN6UjVOMmcxYm5kcE16TjVlUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWFYSnZibTFoYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmx5YjI1dFlXNHVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44MDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--f0543b5fbc64c9fa4c1640fc918366231b8c70ad/ironman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22ironman.png%22%3B+filename%2A%3DUTF-8%27%27ironman.png)[0m
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b312973799362a759d3bbe80edeb0c32568d2b07", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f", "filename"=>"green-lantern"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Processing by ActiveStorage::RepresentationsController#show as PNG
+Processing by ActiveStorage::RepresentationsController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--76af17424cb5b92ed5727fcc0fc7fec030b9d658", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f", "filename"=>"spiderman"}
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms | Allocations: 4424)
+
+
+[36m  Disk Storage (0.2ms) [0m[34mChecked if file exists at key: variants/w6sc12pi1n2222hnxg9j2d9dayfq/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (yes)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZiMnMwZURSamNHazRabU51ZDJGbGN6UjVOMmcxYm5kcE16TjVlUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWFYSnZibTFoYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmx5YjI1dFlXNHVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44MDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--f0543b5fbc64c9fa4c1640fc918366231b8c70ad/ironman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22ironman.png%22%3B+filename%2A%3DUTF-8%27%27ironman.png
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b8aa20751349a4331cb82fbd358b8be907d3e731", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f", "filename"=>"batman"}
+[36m  Disk Storage (0.0ms) [0m[34mChecked if file exists at key: variants/vlqhwbeueda5q5ulmlcq3w9f332r/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (yes)[0m
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: variants/vlqhwbeueda5q5ulmlcq3w9f332r/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZkbXh4YUhkaVpYVmxaR0UxY1RWMWJHMXNZM0V6ZHpsbU16TXljaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzQnBaR1Z5YldGdUxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzNCcFpHVnliV0Z1TG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguODE4WiIsInB1ciI6ImJsb2Jfa2V5In19--3554f88e0e6a9c609e0fd241daa621044474e2c6/spiderman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22spiderman.png%22%3B+filename%2A%3DUTF-8%27%27spiderman.png)[0m
+[36m  Disk Storage (1.1ms) [0m[34mGenerated URL for file at key: variants/w6sc12pi1n2222hnxg9j2d9dayfq/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZkelp6WXpFeWNHa3hiakl5TWpKb2JuaG5PV295WkRsa1lYbG1jUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVozSmxaVzR0YkdGdWRHVnliaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZHlaV1Z1TFd4aGJuUmxjbTR1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguODEzWiIsInB1ciI6ImJsb2Jfa2V5In19--847b4ba03f2341d07bf64c09b38beb253d2b7962/green-lantern.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22green-lantern.png%22%3B+filename%2A%3DUTF-8%27%27green-lantern.png)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZkelp6WXpFeWNHa3hiakl5TWpKb2JuaG5PV295WkRsa1lYbG1jUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVozSmxaVzR0YkdGdWRHVnliaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZHlaV1Z1TFd4aGJuUmxjbTR1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguODEzWiIsInB1ciI6ImJsb2Jfa2V5In19--847b4ba03f2341d07bf64c09b38beb253d2b7962/green-lantern.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22green-lantern.png%22%3B+filename%2A%3DUTF-8%27%27green-lantern.png
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNREZwTm5WNGJYZzNibnBrY2padlpUaHJaVE5qT1hScWVqUXplUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRjBkMjl0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhSM2IyMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44MDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9b612b30cf15039e4b255be43327a7cf1ecff6d7/catwoman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22catwoman.png%22%3B+filename%2A%3DUTF-8%27%27catwoman.png" for ::1 at 2021-03-31 15:37:08 -0500
+Completed 302 Found in 15ms (ActiveRecord: 0.1ms | Allocations: 7034)
+
+
+[36m  Disk Storage (0.3ms) [0m[34mChecked if file exists at key: variants/68ionazutvwhjarmp5jaat0s8dwx/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (yes)[0m
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: variants/68ionazutvwhjarmp5jaat0s8dwx/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZOamhwYjI1aGVuVjBkbmRvYW1GeWJYQTFhbUZoZERCek9HUjNlQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NJL2FXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVltRjBiV0Z1TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbUYwYldGdUxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUT0iLCJleHAiOiIyMDIxLTAzLTMxVDIwOjQyOjA4LjgyM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d310a2f79cda5381295e8697aa3c24945483e8b4/batman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22batman.png%22%3B+filename%2A%3DUTF-8%27%27batman.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZOamhwYjI1aGVuVjBkbmRvYW1GeWJYQTFhbUZoZERCek9HUjNlQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NJL2FXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVltRjBiV0Z1TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbUYwYldGdUxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUT0iLCJleHAiOiIyMDIxLTAzLTMxVDIwOjQyOjA4LjgyM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d310a2f79cda5381295e8697aa3c24945483e8b4/batman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22batman.png%22%3B+filename%2A%3DUTF-8%27%27batman.png
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZkbXh4YUhkaVpYVmxaR0UxY1RWMWJHMXNZM0V6ZHpsbU16TXljaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzQnBaR1Z5YldGdUxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzNCcFpHVnliV0Z1TG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguODE4WiIsInB1ciI6ImJsb2Jfa2V5In19--3554f88e0e6a9c609e0fd241daa621044474e2c6/spiderman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22spiderman.png%22%3B+filename%2A%3DUTF-8%27%27spiderman.png
+Completed 302 Found in 7ms (ActiveRecord: 0.1ms | Allocations: 3758)
+
+
+Completed 302 Found in 14ms (ActiveRecord: 0.1ms | Allocations: 6374)
+
+
+Completed 302 Found in 17ms (ActiveRecord: 0.1ms | Allocations: 9436)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"catwoman.png\"; filename*=UTF-8''catwoman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNREZwTm5WNGJYZzNibnBrY2padlpUaHJaVE5qT1hScWVqUXplUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRjBkMjl0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhSM2IyMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44MDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9b612b30cf15039e4b255be43327a7cf1ecff6d7", "filename"=>"catwoman"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 421)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZOamhwYjI1aGVuVjBkbmRvYW1GeWJYQTFhbUZoZERCek9HUjNlQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NJL2FXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVltRjBiV0Z1TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbUYwYldGdUxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUT0iLCJleHAiOiIyMDIxLTAzLTMxVDIwOjQyOjA4LjgyM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d310a2f79cda5381295e8697aa3c24945483e8b4/batman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22batman.png%22%3B+filename%2A%3DUTF-8%27%27batman.png" for ::1 at 2021-03-31 15:37:08 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZkelp6WXpFeWNHa3hiakl5TWpKb2JuaG5PV295WkRsa1lYbG1jUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVozSmxaVzR0YkdGdWRHVnliaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZHlaV1Z1TFd4aGJuUmxjbTR1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguODEzWiIsInB1ciI6ImJsb2Jfa2V5In19--847b4ba03f2341d07bf64c09b38beb253d2b7962/green-lantern.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22green-lantern.png%22%3B+filename%2A%3DUTF-8%27%27green-lantern.png" for ::1 at 2021-03-31 15:37:08 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZkbXh4YUhkaVpYVmxaR0UxY1RWMWJHMXNZM0V6ZHpsbU16TXljaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzQnBaR1Z5YldGdUxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzNCcFpHVnliV0Z1TG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguODE4WiIsInB1ciI6ImJsb2Jfa2V5In19--3554f88e0e6a9c609e0fd241daa621044474e2c6/spiderman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22spiderman.png%22%3B+filename%2A%3DUTF-8%27%27spiderman.png" for ::1 at 2021-03-31 15:37:08 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZiMnMwZURSamNHazRabU51ZDJGbGN6UjVOMmcxYm5kcE16TjVlUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWFYSnZibTFoYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmx5YjI1dFlXNHVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44MDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--f0543b5fbc64c9fa4c1640fc918366231b8c70ad/ironman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22ironman.png%22%3B+filename%2A%3DUTF-8%27%27ironman.png" for ::1 at 2021-03-31 15:37:08 -0500
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"batman.png\"; filename*=UTF-8''batman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZOamhwYjI1aGVuVjBkbmRvYW1GeWJYQTFhbUZoZERCek9HUjNlQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NJL2FXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVltRjBiV0Z1TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbUYwYldGdUxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUT0iLCJleHAiOiIyMDIxLTAzLTMxVDIwOjQyOjA4LjgyM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d310a2f79cda5381295e8697aa3c24945483e8b4", "filename"=>"batman"}
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4fb316d37e4e6f96280669f240d3d2d151da7c37/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f/superman.png" for ::1 at 2021-03-31 15:37:08 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 427)
+
+
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"spiderman.png\"; filename*=UTF-8''spiderman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZkbXh4YUhkaVpYVmxaR0UxY1RWMWJHMXNZM0V6ZHpsbU16TXljaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzQnBaR1Z5YldGdUxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzNCcFpHVnliV0Z1TG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguODE4WiIsInB1ciI6ImJsb2Jfa2V5In19--3554f88e0e6a9c609e0fd241daa621044474e2c6", "filename"=>"spiderman"}
+Processing by ActiveStorage::DiskController#show as PNG
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 432)
+
+
+Processing by ActiveStorage::RepresentationsController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"green-lantern.png\"; filename*=UTF-8''green-lantern.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZkelp6WXpFeWNHa3hiakl5TWpKb2JuaG5PV295WkRsa1lYbG1jUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVozSmxaVzR0YkdGdWRHVnliaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZHlaV1Z1TFd4aGJuUmxjbTR1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguODEzWiIsInB1ciI6ImJsb2Jfa2V5In19--847b4ba03f2341d07bf64c09b38beb253d2b7962", "filename"=>"green-lantern"}
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4fb316d37e4e6f96280669f240d3d2d151da7c37", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQVpZdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f99476540d1de00175c1e6b6c5e05e747df2f68f", "filename"=>"superman"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[36m  Disk Storage (0.0ms) [0m[34mChecked if file exists at key: variants/6dnnb83x6w6k3it959dlak6gd9qr/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (yes)[0m
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: variants/6dnnb83x6w6k3it959dlak6gd9qr/bf9e4e0bce8646fc4143ec2eff1297f6fa7425dbde5706e441e90964666072a9 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZObVJ1Ym1JNE0zZzJkelpyTTJsME9UVTVaR3hoYXpablpEbHhjaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzVndaWEp0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR6ZFhCbGNtMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44NTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b502c050d049d2dcca021920ad8428a155e7a68f/superman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22superman.png%22%3B+filename%2A%3DUTF-8%27%27superman.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZObVJ1Ym1JNE0zZzJkelpyTTJsME9UVTVaR3hoYXpablpEbHhjaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzVndaWEp0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR6ZFhCbGNtMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44NTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b502c050d049d2dcca021920ad8428a155e7a68f/superman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22superman.png%22%3B+filename%2A%3DUTF-8%27%27superman.png
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 2504)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"ironman.png\"; filename*=UTF-8''ironman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZiMnMwZURSamNHazRabU51ZDJGbGN6UjVOMmcxYm5kcE16TjVlUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWFYSnZibTFoYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmx5YjI1dFlXNHVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44MDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--f0543b5fbc64c9fa4c1640fc918366231b8c70ad", "filename"=>"ironman"}
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms | Allocations: 2610)
+
+
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 749)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZObVJ1Ym1JNE0zZzJkelpyTTJsME9UVTVaR3hoYXpablpEbHhjaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzVndaWEp0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR6ZFhCbGNtMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44NTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b502c050d049d2dcca021920ad8428a155e7a68f/superman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22superman.png%22%3B+filename%2A%3DUTF-8%27%27superman.png" for ::1 at 2021-03-31 15:37:08 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"superman.png\"; filename*=UTF-8''superman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZObVJ1Ym1JNE0zZzJkelpyTTJsME9UVTVaR3hoYXpablpEbHhjaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzVndaWEp0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR6ZFhCbGNtMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44NTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b502c050d049d2dcca021920ad8428a155e7a68f", "filename"=>"superman"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 479)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZhM1J6T1hkbWNXNW1ZamRoZUhZMGFtOTBjVEUyYVhseU56STBaQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRndkR0ZwYmkxdFlYSjJaV3d1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGpZWEIwWVdsdUxXMWhjblpsYkM1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzEwWiIsInB1ciI6ImJsb2Jfa2V5In19--89c7b87dd8abb3a090b90fc1e06f0d9fae72acf6/captain-marvel.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22captain-marvel.png%22%3B+filename%2A%3DUTF-8%27%27captain-marvel.png" for ::1 at 2021-03-31 15:37:09 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"captain-marvel.png\"; filename*=UTF-8''captain-marvel.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZhM1J6T1hkbWNXNW1ZamRoZUhZMGFtOTBjVEUyYVhseU56STBaQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRndkR0ZwYmkxdFlYSjJaV3d1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGpZWEIwWVdsdUxXMWhjblpsYkM1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzEwWiIsInB1ciI6ImJsb2Jfa2V5In19--89c7b87dd8abb3a090b90fc1e06f0d9fae72acf6", "filename"=>"captain-marvel"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 421)
+
+
+Started GET "/" for ::1 at 2021-03-31 15:38:30 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on < '2021-03-31 20:38:30.303206') ORDER BY "movies"."released_on" DESC[0m
+  ↳ app/views/movies/index.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 8)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 12], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 12]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 12]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 6]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 6]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 11], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 11]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 11]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 9], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 9]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 9]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 10], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 10]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 10]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 8], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 8]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 8]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  Rendered movies/index.html.erb within layouts/application (Duration: 72.5ms | Allocations: 49549)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 809)
+  Rendered layouts/_flash.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 35)
+Completed 200 OK in 87ms (Views: 77.7ms | ActiveRecord: 6.9ms | Allocations: 59341)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPVFIxYkRaNk0yUm5jVE4wTVc1M1ozQjBkM0Z5YmpSdVpUbDFlUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKVmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdFpXNWtMV2RoYldVdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoZG1WdVoyVnljeTFsYm1RdFoyRnRaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC42OTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--2f6736cd924a1f65dfdae4fe665f9961e591514c/avengers-end-game.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22avengers-end-game.png%22%3B+filename%2A%3DUTF-8%27%27avengers-end-game.png" for ::1 at 2021-03-31 15:38:30 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"avengers-end-game.png\"; filename*=UTF-8''avengers-end-game.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPVFIxYkRaNk0yUm5jVE4wTVc1M1ozQjBkM0Z5YmpSdVpUbDFlUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKVmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdFpXNWtMV2RoYldVdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoZG1WdVoyVnljeTFsYm1RdFoyRnRaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC42OTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--2f6736cd924a1f65dfdae4fe665f9961e591514c", "filename"=>"avengers-end-game"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 399)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZhM1J6T1hkbWNXNW1ZamRoZUhZMGFtOTBjVEUyYVhseU56STBaQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRndkR0ZwYmkxdFlYSjJaV3d1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGpZWEIwWVdsdUxXMWhjblpsYkM1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzEwWiIsInB1ciI6ImJsb2Jfa2V5In19--89c7b87dd8abb3a090b90fc1e06f0d9fae72acf6/captain-marvel.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22captain-marvel.png%22%3B+filename%2A%3DUTF-8%27%27captain-marvel.png" for ::1 at 2021-03-31 15:38:30 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"captain-marvel.png\"; filename*=UTF-8''captain-marvel.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZhM1J6T1hkbWNXNW1ZamRoZUhZMGFtOTBjVEUyYVhseU56STBaQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRndkR0ZwYmkxdFlYSjJaV3d1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGpZWEIwWVdsdUxXMWhjblpsYkM1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzEwWiIsInB1ciI6ImJsb2Jfa2V5In19--89c7b87dd8abb3a090b90fc1e06f0d9fae72acf6", "filename"=>"captain-marvel"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 401)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZkelp6WXpFeWNHa3hiakl5TWpKb2JuaG5PV295WkRsa1lYbG1jUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVozSmxaVzR0YkdGdWRHVnliaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZHlaV1Z1TFd4aGJuUmxjbTR1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguODEzWiIsInB1ciI6ImJsb2Jfa2V5In19--847b4ba03f2341d07bf64c09b38beb253d2b7962/green-lantern.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22green-lantern.png%22%3B+filename%2A%3DUTF-8%27%27green-lantern.png" for ::1 at 2021-03-31 15:38:30 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaWE51WkhWNWJESnFibnBuTnpVd05XSmlPVFUwZDJwMWNYUnBkaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKZGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbllYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC43NjdaIiwicHVyIjoiYmxvYl9rZXkifX0=--137954886659ea3f9e31f71a4af514b065a3e03e/avengers-infinity-war.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22avengers-infinity-war.png%22%3B+filename%2A%3DUTF-8%27%27avengers-infinity-war.png" for ::1 at 2021-03-31 15:38:30 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPV05zWm1Ob05XWnNOMk41WW1nd2NURXdhbXBvYW1zeU1XMW9aUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlteGhZMnN0Y0dGdWRHaGxjaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySnNZV05yTFhCaGJuUm9aWEl1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzY5WiIsInB1ciI6ImJsb2Jfa2V5In19--66b5c27e7d824ae7cba005bae269cd58e30ae859/black-panther.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22black-panther.png%22%3B+filename%2A%3DUTF-8%27%27black-panther.png" for ::1 at 2021-03-31 15:38:30 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNSEF5TVhCdGNIUnBPSGt3WW1sa2NtVXdaVFU0TTJweE9XaDBhUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWQyOXVaR1Z5TFhkdmJXRnVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmQyOXVaR1Z5TFhkdmJXRnVMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC43NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--116513a47dc3676248270b0ceb482e5a97a727c2/wonder-woman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22wonder-woman.png%22%3B+filename%2A%3DUTF-8%27%27wonder-woman.png" for ::1 at 2021-03-31 15:38:30 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZiMnMwZURSamNHazRabU51ZDJGbGN6UjVOMmcxYm5kcE16TjVlUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWFYSnZibTFoYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmx5YjI1dFlXNHVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44MDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--f0543b5fbc64c9fa4c1640fc918366231b8c70ad/ironman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22ironman.png%22%3B+filename%2A%3DUTF-8%27%27ironman.png" for ::1 at 2021-03-31 15:38:30 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"green-lantern.png\"; filename*=UTF-8''green-lantern.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZkelp6WXpFeWNHa3hiakl5TWpKb2JuaG5PV295WkRsa1lYbG1jUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVozSmxaVzR0YkdGdWRHVnliaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZHlaV1Z1TFd4aGJuUmxjbTR1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguODEzWiIsInB1ciI6ImJsb2Jfa2V5In19--847b4ba03f2341d07bf64c09b38beb253d2b7962", "filename"=>"green-lantern"}
+Processing by ActiveStorage::DiskController#show as PNG
+Processing by ActiveStorage::DiskController#show as PNG
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 1265)
+
+
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"avengers-infinity-war.png\"; filename*=UTF-8''avengers-infinity-war.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaWE51WkhWNWJESnFibnBuTnpVd05XSmlPVFUwZDJwMWNYUnBkaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKZGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbllYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC43NjdaIiwicHVyIjoiYmxvYl9rZXkifX0=--137954886659ea3f9e31f71a4af514b065a3e03e", "filename"=>"avengers-infinity-war"}
+Processing by ActiveStorage::DiskController#show as PNG
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 409)
+
+
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"wonder-woman.png\"; filename*=UTF-8''wonder-woman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNSEF5TVhCdGNIUnBPSGt3WW1sa2NtVXdaVFU0TTJweE9XaDBhUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWQyOXVaR1Z5TFhkdmJXRnVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmQyOXVaR1Z5TFhkdmJXRnVMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC43NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--116513a47dc3676248270b0ceb482e5a97a727c2", "filename"=>"wonder-woman"}
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"black-panther.png\"; filename*=UTF-8''black-panther.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPV05zWm1Ob05XWnNOMk41WW1nd2NURXdhbXBvYW1zeU1XMW9aUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlteGhZMnN0Y0dGdWRHaGxjaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySnNZV05yTFhCaGJuUm9aWEl1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzY5WiIsInB1ciI6ImJsb2Jfa2V5In19--66b5c27e7d824ae7cba005bae269cd58e30ae859", "filename"=>"black-panther"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 403)
+
+
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"ironman.png\"; filename*=UTF-8''ironman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZiMnMwZURSamNHazRabU51ZDJGbGN6UjVOMmcxYm5kcE16TjVlUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWFYSnZibTFoYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmx5YjI1dFlXNHVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44MDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--f0543b5fbc64c9fa4c1640fc918366231b8c70ad", "filename"=>"ironman"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 1598)
+
+
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 481)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNREZwTm5WNGJYZzNibnBrY2padlpUaHJaVE5qT1hScWVqUXplUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRjBkMjl0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhSM2IyMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44MDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9b612b30cf15039e4b255be43327a7cf1ecff6d7/catwoman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22catwoman.png%22%3B+filename%2A%3DUTF-8%27%27catwoman.png" for ::1 at 2021-03-31 15:38:30 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"catwoman.png\"; filename*=UTF-8''catwoman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNREZwTm5WNGJYZzNibnBrY2padlpUaHJaVE5qT1hScWVqUXplUzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRjBkMjl0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhSM2IyMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44MDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9b612b30cf15039e4b255be43327a7cf1ecff6d7", "filename"=>"catwoman"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 716)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZkbXh4YUhkaVpYVmxaR0UxY1RWMWJHMXNZM0V6ZHpsbU16TXljaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzQnBaR1Z5YldGdUxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzNCcFpHVnliV0Z1TG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguODE4WiIsInB1ciI6ImJsb2Jfa2V5In19--3554f88e0e6a9c609e0fd241daa621044474e2c6/spiderman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22spiderman.png%22%3B+filename%2A%3DUTF-8%27%27spiderman.png" for ::1 at 2021-03-31 15:38:30 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZObVJ1Ym1JNE0zZzJkelpyTTJsME9UVTVaR3hoYXpablpEbHhjaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzVndaWEp0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR6ZFhCbGNtMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44NTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b502c050d049d2dcca021920ad8428a155e7a68f/superman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22superman.png%22%3B+filename%2A%3DUTF-8%27%27superman.png" for ::1 at 2021-03-31 15:38:30 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZOamhwYjI1aGVuVjBkbmRvYW1GeWJYQTFhbUZoZERCek9HUjNlQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NJL2FXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVltRjBiV0Z1TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbUYwYldGdUxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUT0iLCJleHAiOiIyMDIxLTAzLTMxVDIwOjQyOjA4LjgyM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d310a2f79cda5381295e8697aa3c24945483e8b4/batman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22batman.png%22%3B+filename%2A%3DUTF-8%27%27batman.png" for ::1 at 2021-03-31 15:38:30 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"superman.png\"; filename*=UTF-8''superman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZObVJ1Ym1JNE0zZzJkelpyTTJsME9UVTVaR3hoYXpablpEbHhjaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzVndaWEp0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR6ZFhCbGNtMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wMy0zMVQyMDo0MjowOC44NTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--b502c050d049d2dcca021920ad8428a155e7a68f", "filename"=>"superman"}
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"spiderman.png\"; filename*=UTF-8''spiderman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZkbXh4YUhkaVpYVmxaR0UxY1RWMWJHMXNZM0V6ZHpsbU16TXljaTlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzQnBaR1Z5YldGdUxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzNCcFpHVnliV0Z1TG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguODE4WiIsInB1ciI6ImJsb2Jfa2V5In19--3554f88e0e6a9c609e0fd241daa621044474e2c6", "filename"=>"spiderman"}
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"batman.png\"; filename*=UTF-8''batman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZOamhwYjI1aGVuVjBkbmRvYW1GeWJYQTFhbUZoZERCek9HUjNlQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NJL2FXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVltRjBiV0Z1TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbUYwYldGdUxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUT0iLCJleHAiOiIyMDIxLTAzLTMxVDIwOjQyOjA4LjgyM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d310a2f79cda5381295e8697aa3c24945483e8b4", "filename"=>"batman"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 403)
+
+
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 1516)
+
+
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 816)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaREZ1ZVdKMmJtVTJhMnM1YUd4NmNXZ3lkbmx6YmpacE0zQm5aQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVptRnVkR0Z6ZEdsakxXWnZkWEl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG1ZVzUwWVhOMGFXTXRabTkxY2k1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzQxWiIsInB1ciI6ImJsb2Jfa2V5In19--6badfc5b1c69b23f3d091fb6f5f0343a11a766d2/fantastic-four.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22fantastic-four.png%22%3B+filename%2A%3DUTF-8%27%27fantastic-four.png" for ::1 at 2021-03-31 15:38:30 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"fantastic-four.png\"; filename*=UTF-8''fantastic-four.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaREZ1ZVdKMmJtVTJhMnM1YUd4NmNXZ3lkbmx6YmpacE0zQm5aQzlpWmpsbE5HVXdZbU5sT0RZME5tWmpOREUwTTJWak1tVm1aakV5T1RkbU5tWmhOelF5TldSaVpHVTFOekEyWlRRME1XVTVNRGsyTkRZMk5qQTNNbUU1QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVptRnVkR0Z6ZEdsakxXWnZkWEl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG1ZVzUwWVhOMGFXTXRabTkxY2k1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDMtMzFUMjA6NDI6MDguNzQxWiIsInB1ciI6ImJsb2Jfa2V5In19--6badfc5b1c69b23f3d091fb6f5f0343a11a766d2", "filename"=>"fantastic-four"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 408)
+
+
+Started GET "/movies/avengers-endgame" for ::1 at 2021-03-31 15:38:31 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"avengers-endgame"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."slug" = ? LIMIT ?[0m  [["slug", "avengers-endgame"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `current_user'
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."movie_id" = ? LIMIT ?[0m  [["user_id", 1], ["movie_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:27:in `show'
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.erb:21
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.erb:33
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "characterizations" ON "genres"."id" = "characterizations"."genre_id" WHERE "characterizations"."movie_id" = ?[0m  [["movie_id", 1]]
+  ↳ app/views/movies/show.html.erb:45
+  Rendered movies/show.html.erb within layouts/application (Duration: 15.5ms | Allocations: 11835)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 813)
+  Rendered layouts/_flash.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 35)
+Completed 200 OK in 71ms (Views: 24.0ms | ActiveRecord: 3.2ms | Allocations: 40023)
+
+

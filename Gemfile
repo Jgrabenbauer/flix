@@ -6,8 +6,14 @@ ruby '2.6.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 
+group :development, :test do
+  gem 'sqlite3'
+end
+
 # Use postgrSQL as the production database
-gem 'pg', '>= 0.18', '< 2.0'
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
