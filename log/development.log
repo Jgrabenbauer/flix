@@ -25792,3 +25792,360 @@ Processing by MoviesController#show as HTML
 Completed 200 OK in 65ms (Views: 41.0ms | ActiveRecord: 2.5ms | Allocations: 17376)
 
 
+Started GET "/movies/captain-marvel" for ::1 at 2021-04-01 17:42:10 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"captain-marvel"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."slug" = $1 LIMIT $2[0m  [["slug", "captain-marvel"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:64:in `set_movie'
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.erb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 8)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.erb:21
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "characterizations" ON "genres"."id" = "characterizations"."genre_id" WHERE "characterizations"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/views/movies/show.html.erb:45
+  Rendered movies/show.html.erb within layouts/application (Duration: 23.4ms | Allocations: 6576)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 742)
+  Rendered layouts/_flash.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 35)
+Completed 200 OK in 56ms (Views: 44.4ms | ActiveRecord: 4.6ms | Allocations: 17381)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZhVGh0WmpBeFluaG5jM1oyZWpaaE5IbDJjbkoxWkc5cU9XNHdiQzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRndkR0ZwYmkxdFlYSjJaV3d1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGpZWEIwWVdsdUxXMWhjblpsYkM1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDQtMDFUMjI6NDI6NTYuMDg5WiIsInB1ciI6ImJsb2Jfa2V5In19--1c5d45a69ded4107736789ad86a353dd73189d9c/captain-marvel.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22captain-marvel.png%22%3B+filename%2A%3DUTF-8%27%27captain-marvel.png" for ::1 at 2021-04-01 17:42:10 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"captain-marvel.png\"; filename*=UTF-8''captain-marvel.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZhVGh0WmpBeFluaG5jM1oyZWpaaE5IbDJjbkoxWkc5cU9XNHdiQzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRndkR0ZwYmkxdFlYSjJaV3d1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGpZWEIwWVdsdUxXMWhjblpsYkM1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDQtMDFUMjI6NDI6NTYuMDg5WiIsInB1ciI6ImJsb2Jfa2V5In19--1c5d45a69ded4107736789ad86a353dd73189d9c", "filename"=>"captain-marvel"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 402)
+
+
+Started GET "/movies" for ::1 at 2021-04-01 17:42:12 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on < '2021-04-01 22:42:12.089402') ORDER BY "movies"."released_on" DESC[0m
+  ↳ app/views/movies/index.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 8)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 12]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 12]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 6]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 6]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 7]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 7]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 11]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 11]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 9]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 9]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 10]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 10]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 8]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 8]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  Rendered movies/index.html.erb within layouts/application (Duration: 98.7ms | Allocations: 50096)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 750)
+  Rendered layouts/_flash.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 35)
+Completed 200 OK in 113ms (Views: 97.0ms | ActiveRecord: 14.1ms | Allocations: 59910)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZhWE50WWpKcU1HTnFNRE5zY1habloySmxjRFpxYkhSbU4zTmxiQzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKVmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdFpXNWtMV2RoYldVdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoZG1WdVoyVnljeTFsYm1RdFoyRnRaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wNC0wMVQyMjo0Mjo1Ny44ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--92ff6d2151196a944d688641fbe99a5e744d996c/avengers-end-game.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22avengers-end-game.png%22%3B+filename%2A%3DUTF-8%27%27avengers-end-game.png" for ::1 at 2021-04-01 17:42:12 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZlbVJuYldKNE1qVm1jWHB0TW1KaFpUWTNaWGRuT0RSaFoyNWlZaTh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKZGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbllYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wNC0wMVQyMjo0Mjo1Ny45MjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--a71edb6e5f360bc670880f3b3caf2eeb59c740da/avengers-infinity-war.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22avengers-infinity-war.png%22%3B+filename%2A%3DUTF-8%27%27avengers-infinity-war.png" for ::1 at 2021-04-01 17:42:12 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaWFpwYzJadGRISTBZbkUzYW1ocmRXeDBkM0p2TUdVd2VUWTVjQzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlteGhZMnN0Y0dGdWRHaGxjaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySnNZV05yTFhCaGJuUm9aWEl1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDQtMDFUMjI6NDI6NTcuOTE3WiIsInB1ciI6ImJsb2Jfa2V5In19--044a1c9082a75dced930214c6ab110b5d9924fdc/black-panther.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22black-panther.png%22%3B+filename%2A%3DUTF-8%27%27black-panther.png" for ::1 at 2021-04-01 17:42:12 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZjR1ZzTVc1aGRXRjBkWGw0YjJGdWNIVm9kelZxTkdJM01qWjVieTh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWQyOXVaR1Z5TFhkdmJXRnVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmQyOXVaR1Z5TFhkdmJXRnVMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wNC0wMVQyMjo0Mjo1Ny45MjlaIiwicHVyIjoiYmxvYl9rZXkifX0=--db47e02db9aa7934c6647deb62b070584fba6e63/wonder-woman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22wonder-woman.png%22%3B+filename%2A%3DUTF-8%27%27wonder-woman.png" for ::1 at 2021-04-01 17:42:12 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZhblI1TmpKbE4zaHhkMmhwYVRVd2JHVnRNMnh2WlhaaWJERmtkQzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVptRnVkR0Z6ZEdsakxXWnZkWEl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG1ZVzUwWVhOMGFXTXRabTkxY2k1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDQtMDFUMjI6NDI6NTcuOTMwWiIsInB1ciI6ImJsb2Jfa2V5In19--64689ea10fd836276c09a8462629953f0fce58dc/fantastic-four.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22fantastic-four.png%22%3B+filename%2A%3DUTF-8%27%27fantastic-four.png" for ::1 at 2021-04-01 17:42:12 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"black-panther.png\"; filename*=UTF-8''black-panther.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZaWFpwYzJadGRISTBZbkUzYW1ocmRXeDBkM0p2TUdVd2VUWTVjQzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlteGhZMnN0Y0dGdWRHaGxjaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoySnNZV05yTFhCaGJuUm9aWEl1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDQtMDFUMjI6NDI6NTcuOTE3WiIsInB1ciI6ImJsb2Jfa2V5In19--044a1c9082a75dced930214c6ab110b5d9924fdc", "filename"=>"black-panther"}
+Processing by ActiveStorage::DiskController#show as PNG
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"fantastic-four.png\"; filename*=UTF-8''fantastic-four.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZhblI1TmpKbE4zaHhkMmhwYVRVd2JHVnRNMnh2WlhaaWJERmtkQzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKUGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVptRnVkR0Z6ZEdsakxXWnZkWEl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG1ZVzUwWVhOMGFXTXRabTkxY2k1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVSIsImV4cCI6IjIwMjEtMDQtMDFUMjI6NDI6NTcuOTMwWiIsInB1ciI6ImJsb2Jfa2V5In19--64689ea10fd836276c09a8462629953f0fce58dc", "filename"=>"fantastic-four"}
+Processing by ActiveStorage::DiskController#show as PNG
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 1947)
+
+
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"avengers-end-game.png\"; filename*=UTF-8''avengers-end-game.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZhWE50WWpKcU1HTnFNRE5zY1habloySmxjRFpxYkhSbU4zTmxiQzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKVmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdFpXNWtMV2RoYldVdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRoZG1WdVoyVnljeTFsYm1RdFoyRnRaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wNC0wMVQyMjo0Mjo1Ny44ODVaIiwicHVyIjoiYmxvYl9rZXkifX0=--92ff6d2151196a944d688641fbe99a5e744d996c", "filename"=>"avengers-end-game"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 402)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"wonder-woman.png\"; filename*=UTF-8''wonder-woman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZjR1ZzTVc1aGRXRjBkWGw0YjJGdWNIVm9kelZxTkdJM01qWjVieTh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWQyOXVaR1Z5TFhkdmJXRnVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmQyOXVaR1Z5TFhkdmJXRnVMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wNC0wMVQyMjo0Mjo1Ny45MjlaIiwicHVyIjoiYmxvYl9rZXkifX0=--db47e02db9aa7934c6647deb62b070584fba6e63", "filename"=>"wonder-woman"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 402)
+
+
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 402)
+
+
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"avengers-infinity-war.png\"; filename*=UTF-8''avengers-infinity-war.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZlbVJuYldKNE1qVm1jWHB0TW1KaFpUWTNaWGRuT0RSaFoyNWlZaTh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKZGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVlYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbllYWmxibWRsY25NdGFXNW1hVzVwZEhrdGQyRnlMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wNC0wMVQyMjo0Mjo1Ny45MjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--a71edb6e5f360bc670880f3b3caf2eeb59c740da", "filename"=>"avengers-infinity-war"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 460)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZOelowYzNadll6QjFZbkU0YVcxdllXVjFiMjV5T1dWdFlXeHRjaTh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWFYSnZibTFoYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmx5YjI1dFlXNHVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNC0wMVQyMjo0Mjo1Ny45MDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--6f828ac79e01bcf4409a75b3e9afe0b985a41480/ironman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22ironman.png%22%3B+filename%2A%3DUTF-8%27%27ironman.png" for ::1 at 2021-04-01 17:42:12 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"ironman.png\"; filename*=UTF-8''ironman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZOelowYzNadll6QjFZbkU0YVcxdllXVjFiMjV5T1dWdFlXeHRjaTh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKQmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWFYSnZibTFoYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMmx5YjI1dFlXNHVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWQT09IiwiZXhwIjoiMjAyMS0wNC0wMVQyMjo0Mjo1Ny45MDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--6f828ac79e01bcf4409a75b3e9afe0b985a41480", "filename"=>"ironman"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZZMkYzWW01dU5IQm5helF3Y0Roc1oyOWhlR0p1Wm5ZNGFXcHJlUzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRjBkMjl0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhSM2IyMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wNC0wMVQyMjo0Mjo1Ny45NDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--48740d741a00d7c4f48fc21b1417a56a54965c49/catwoman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22catwoman.png%22%3B+filename%2A%3DUTF-8%27%27catwoman.png" for ::1 at 2021-04-01 17:42:12 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNRFY2YW1SaGFXZHdOSFprZW5SMmVXdzJPV3QxTUc1b2RIaDFieTh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NJL2FXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVltRjBiV0Z1TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbUYwYldGdUxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUT0iLCJleHAiOiIyMDIxLTA0LTAxVDIyOjQyOjU3Ljk1M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2303a70d3ac84a2c2f3666216bcbaf7f04d0c26b/batman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22batman.png%22%3B+filename%2A%3DUTF-8%27%27batman.png" for ::1 at 2021-04-01 17:42:12 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPSEprTm1vMWNEQm5hemxqZVc1blpqUXdiWGhoZG5Oa016UmpaQzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzVndaWEp0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR6ZFhCbGNtMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wNC0wMVQyMjo0Mjo1Ny45NTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--fd0574b62157a649c785a80b2a384de406e1d2d2/superman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22superman.png%22%3B+filename%2A%3DUTF-8%27%27superman.png" for ::1 at 2021-04-01 17:42:12 -0500
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZZM05zZVhwbGRtTnJOMlY2TW1vM01tMDRkV3RyTld0d2VtOXJjUzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzQnBaR1Z5YldGdUxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzNCcFpHVnliV0Z1TG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjEtMDQtMDFUMjI6NDI6NTcuOTQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--3ce9f394f8a39037d80c59fdb9f857462072268e/spiderman.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22spiderman.png%22%3B+filename%2A%3DUTF-8%27%27spiderman.png" for ::1 at 2021-04-01 17:42:12 -0500
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 966)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"catwoman.png\"; filename*=UTF-8''catwoman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZZMkYzWW01dU5IQm5helF3Y0Roc1oyOWhlR0p1Wm5ZNGFXcHJlUzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVkyRjBkMjl0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqWVhSM2IyMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wNC0wMVQyMjo0Mjo1Ny45NDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--48740d741a00d7c4f48fc21b1417a56a54965c49", "filename"=>"catwoman"}
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"batman.png\"; filename*=UTF-8''batman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZNRFY2YW1SaGFXZHdOSFprZW5SMmVXdzJPV3QxTUc1b2RIaDFieTh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NJL2FXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVltRjBiV0Z1TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbUYwYldGdUxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUT0iLCJleHAiOiIyMDIxLTA0LTAxVDIyOjQyOjU3Ljk1M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2303a70d3ac84a2c2f3666216bcbaf7f04d0c26b", "filename"=>"batman"}
+Processing by ActiveStorage::DiskController#show as PNG
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 835)
+
+
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 1097)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"superman.png\"; filename*=UTF-8''superman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZPSEprTm1vMWNEQm5hemxqZVc1blpqUXdiWGhoZG5Oa016UmpaQzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzVndaWEp0WVc0dWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR6ZFhCbGNtMWhiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMS0wNC0wMVQyMjo0Mjo1Ny45NTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--fd0574b62157a649c785a80b2a384de406e1d2d2", "filename"=>"superman"}
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"spiderman.png\"; filename*=UTF-8''spiderman.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZZM05zZVhwbGRtTnJOMlY2TW1vM01tMDRkV3RyTld0d2VtOXJjUzh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaWMzQnBaR1Z5YldGdUxuQnVaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYzNCcFpHVnliV0Z1TG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjEtMDQtMDFUMjI6NDI6NTcuOTQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--3ce9f394f8a39037d80c59fdb9f857462072268e", "filename"=>"spiderman"}
+Completed 304 Not Modified in 0ms (ActiveRecord: 0.0ms | Allocations: 406)
+
+
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 710)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZjbUV5TURNMFpYTXlaamx0Y1hOMWMzcGtibTV1TjNJNGFuTnZNaTh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVozSmxaVzR0YkdGdWRHVnliaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZHlaV1Z1TFd4aGJuUmxjbTR1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDQtMDFUMjI6NDI6NTguMTc5WiIsInB1ciI6ImJsb2Jfa2V5In19--4ff3b2eb36f008807858d0e4d1038bd0f5dd4727/green-lantern.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22green-lantern.png%22%3B+filename%2A%3DUTF-8%27%27green-lantern.png" for ::1 at 2021-04-01 17:42:12 -0500
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"green-lantern.png\"; filename*=UTF-8''green-lantern.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZjbUV5TURNMFpYTXlaamx0Y1hOMWMzcGtibTV1TjNJNGFuTnZNaTh5WkRJNE9HRXdZMkV6T1dFeVpqSXhZV05sTXprMFpqYzBPRGt4WlRRMFpETTNaV00wTlRKbE16QTVZekJpTUdaa1ptRmtZamM1TW1ZNVpXTXdPR00xQmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKTmFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVozSmxaVzR0YkdGdWRHVnliaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZHlaV1Z1TFd4aGJuUmxjbTR1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDQtMDFUMjI6NDI6NTguMTc5WiIsInB1ciI6ImJsb2Jfa2V5In19--4ff3b2eb36f008807858d0e4d1038bd0f5dd4727", "filename"=>"green-lantern"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms | Allocations: 402)
+
+
+Started GET "/movies/filter/upcoming" for ::1 at 2021-04-01 17:42:12 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"filter"=>"upcoming"}
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on > '2021-04-01 22:42:12.836605') ORDER BY "movies"."released_on" ASC[0m
+  ↳ app/views/movies/index.html.erb:2
+  Rendered movies/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 722)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 760)
+  Rendered layouts/_flash.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 35)
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 1.6ms | Allocations: 10541)
+
+
+Started GET "/movies" for ::1 at 2021-04-01 17:42:14 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on < '2021-04-01 22:42:14.507494') ORDER BY "movies"."released_on" DESC[0m
+  ↳ app/views/movies/index.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 1]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 8)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 2]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 4]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 3]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 12]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 12]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 6]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 6]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 5]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 7]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 7]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.1ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 11]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 11]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 9]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 9]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 10]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 10]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Movie"], ["name", "main_image"], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:24:in `main_image'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/helpers/movies_helper.rb:25:in `main_image'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 8]]
+  ↳ app/models/movie.rb:42:in `flop?'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = $1[0m  [["movie_id", 8]]
+  ↳ app/models/movie.rb:50:in `average_stars'
+  Rendered shared/_stars.html.erb (Duration: 0.0ms | Allocations: 7)
+  Rendered movies/index.html.erb within layouts/application (Duration: 170.0ms | Allocations: 50108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 750)
+  Rendered layouts/_flash.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 35)
+Completed 200 OK in 186ms (Views: 162.0ms | ActiveRecord: 23.1ms | Allocations: 59930)
+
+
